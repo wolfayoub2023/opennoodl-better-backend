@@ -7,8 +7,7 @@ RUN apk add --no-cache python3 make g++ gcc gettext
 COPY package*.json ./
 COPY parse-config.json ./
 
-RUN npm install -g npm@latest && \
-    npm install && \
+RUN npm install && \
     npm install -g parse-server @parse/s3-files-adapter && \
     npm cache clean --force
 
